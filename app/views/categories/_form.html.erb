@@ -11,7 +11,19 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.submit %>
+  <div class="input">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <strong>Upload an image...</strong>
+  <div class="input">
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image, required: true, class:"input-file"%>
+  </div>
+    
+  <div class="d-flex">
+    <div class="submit">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

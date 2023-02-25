@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
-
-<div id="categories">
+<div class="home-header-categories">
+  <h1>CATEGORIES</h1>
+</div >
+<div class="categories">
   <% @categories.each do |category| %>
+    <%= link_to category do %>
     <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <%end%>
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
+
+<div class="new-cat-btn">
+  <button>
+    <%= link_to "New category", new_category_path %>
+  </button> 
+</div>

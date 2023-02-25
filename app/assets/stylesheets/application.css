@@ -43,20 +43,13 @@ main {
   border: 1px solid rgba(134, 134, 134, 0.507);
 }
 
-h1 {
-  line-height: 70px;
-  text-align: center;
-  font-size: 24px;
-  color: var(--on-secondary);
-}
-
 button a {
   color: var(--on-secondary);
   font-size: 1.3rem;
 }
 
 form {
-  margin: 1.5rem auto;
+  margin: 0 auto;
   padding: 1rem;
   background-color: var(--bg-color);
   border-radius: 4px;
@@ -105,7 +98,7 @@ form {
 }
 
 /* LOG IN and SIGN UP */
-nav.nav-splash h1 {
+.nav-splash h1 {
   background-color: var(--shadow-color);
   color: var(--main-color);
 }
@@ -131,15 +124,41 @@ nav.nav-splash h1 {
 
 /* CATEGORIES PAGE */
 
+.home-header-categories h1 {
+  width: 100%;
+  line-height: 70px;
+  text-align: center;
+  font-size: 24px;
+  background-color: var(--main-color);
+  color: var(--on-secondary);
+}
+
 .header-categories {
   height: 70px;
   width: 100%;
   background-color: var(--main-color);
-  margin-bottom: 1rem;
+}
+
+.header-categories h1 {
+  width: 70%;
+  font-size: 24px;
+  color: var(--on-secondary);
+}
+
+.icons {
+  width: 10%;
+}
+
+.icons i {
+  margin-left: 50%;
+  padding: 0.3rem 0.5rem;
+  text-align: right;
+  color: var(--on-secondary);
+  font-size: 1.2rem;
 }
 
 .categories {
-  padding: 0 1rem 1rem;
+  padding: 1rem 1rem 0;
 }
 
 .category {
@@ -152,7 +171,7 @@ nav.nav-splash h1 {
 .image {
   width: 70px;
   height: 90%;
-  background-color: aquamarine;
+  background-color: var(--shadow-color);
 }
 
 .image img {
@@ -168,16 +187,17 @@ nav.nav-splash h1 {
 }
 
 .name-date h3.name {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .name-date p.date {
   height: 67%;
   align-items: flex-end;
+  margin-top: 1rem;
 }
 
 .total-amount {
-  margin-top: 1rem;
+  margin: 1rem 3rem 0.5rem 0;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -196,70 +216,38 @@ nav.nav-splash h1 {
   background-color: #5fb523;
 }
 
-/*
-.word {
-
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.transactions {
+  flex-direction: column;
+  padding: 0 1rem;
+  align-items: center;
+  background-color: #3778c205;
 }
 
-button,
-.signupbtn {
-  font-weight: 700;
-  border: var(--size-border);
-  border-radius: 4px;
-  padding: 0.3rem 1rem;
-}
-
-.notice,
-.alert {
-  border-radius: 5px;
-  color: black;
+.transactions h2 {
   text-align: center;
 }
 
-.notice {
-  border: 2px solid rgb(0 128 0 / 0%);
-  background: #d8ffe3;
-}
-
-.alert {
-  border: 2px solid #f000;
-  background: #f2b5af;
-}
-
-.food-title {
-  text-align: center;
-}
-
-section.container {
-  max-width: 992px;
-  padding: 1rem;
-}
-
-.signup,
-.links {
-  text-align: center;
-}
-
-.navbar {
-  max-width: 992px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: #98bdff;
-}
-
-.recipe-btn {
+.transactions ul {
   width: 100%;
-  justify-content: center;
+  margin: 0 auto;
 }
 
-.add-recipe-btn button {
-  font-weight: 700;
-  border: var(--size-border);
+.transactions ul li {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
   border-radius: 4px;
-  padding: 0.4rem 1rem;
+  background-color: var(--bacground-color);
 }
- */
+
+.transactions li p {
+  margin: 3px 0;
+  font-size: 1.1rem;
+}
+
+.transactions p span {
+  color: var(--main-color);
+}
 
 .input label {
   font-weight: 700;
@@ -274,6 +262,10 @@ section.container {
 .submit {
   width: 100%;
   justify-content: center;
+}
+
+.action-btn {
+  width: 600px;
 }
 
 .submit input,

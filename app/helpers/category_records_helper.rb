@@ -1,0 +1,2 @@
+module CategoryRecordsHelper
+end
