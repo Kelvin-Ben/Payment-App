@@ -6,7 +6,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  - [🚀 Live Demo](https://payment-app.onrender.com)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -27,7 +27,7 @@
 # 📖 [Budget App] <a name="about-project"></a>
 
 
-**Budget App** is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you have spent and on what
+**Payment App** is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you have spent and on what
 
 ## 🛠 Built With <a name="built-with"></a>
 
