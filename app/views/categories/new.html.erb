@@ -1,0 +1,12 @@
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  categories_path do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1>NEW CATEGORY</h1>
+</nav>
+
+<%= render "form", category: @category %>
+
+<br>

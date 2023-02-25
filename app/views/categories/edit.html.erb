@@ -1,0 +1,18 @@
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  category_path(@category) do %>
+      <i class="fa-solid fa-right-to-bracket"></i>
+    <% end %>
+  </div>
+  <h1>EDITING CATEGORY</h1>
+</nav>
+
+<%= render "form", category: @category %>
+
+<br>
+
+<div>
+  <% link_to "Back to categories", categories_path %>
+</div>
+<br>
+ 

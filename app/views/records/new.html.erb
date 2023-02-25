@@ -1,0 +1,20 @@
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  category_path(@category) do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1 class="transaction-header-nav">NEW TRANSACTION</h1>
+  <div class="actions-save">
+    <input type="submit" name="commit" value="save" class="login-button new-edit-cat" form="new-tran-from" data-disable-with="Log in">
+  </div>
+</nav>
+
+<%= render "form", record: @record, category: @category %>
+
+<br>
+
+<div class="">
+  <% link_to "Back to records", category_records_path(@category, @record) %>
+  <% link_to "Back to category", category_path(@category) %>
+</div>

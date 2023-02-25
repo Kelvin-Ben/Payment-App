@@ -1,0 +1,68 @@
+<% render @category %>
+
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  categories_path do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1>CATEGORY DETAILS</h1>
+</nav>
+
+<p style="color: green"><%= notice %></p>
+
+<article class="category">
+  <div class="category-head d-flex">
+    <div class="image">
+      <%= image_tag(@category.image) %>
+    </div>
+    <div class="name-date d-flex">
+      <h3 class="name"><%= @category.name %></h3>
+    </div>
+    <p class="total-amount">$<%=@category.total_amount%></p>
+    <div class="btn-changes d-flex flex-center">
+      <div class="back-btn">
+        <%= link_to "Edit", edit_category_path(@category) %>
+      </div>
+      <div class="">
+        <%= button_to "Destroy", @category, class:"back-btn", method: :delete %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <p class="date d-flex"> <%= @category.created_at.strftime('%Y') %>
+    <span><%= @category.created_at.to_formatted_s(:short) %></span>
+  </p>
+  <div class="total-payment d-flex flex-center">
+    <p class="">TOTAL PAYMENT</p>
+    <p class="total-amount">Tolal: $<%=@category.total_amount%></p>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <br>
+  
+
+  <div class="transactions d-flex"> 
+    <h2>List of transaction </h2>
+    <ul class="categoies-records">
+      
+      <% @category.recent_transactions.each do |record| %>
+        <li id="category-record">
+          <%= render 'records/record',  record: record %>
+        </li>
+      <%end%>
+    </ul>
+    <div class="action-btn">
+      <%= link_to "Add new transaction", new_category_record_path(@category.id), class: ""%>
+    </div>
+  </div>
+
+  <h2> <% @category.records.map{|record| record} %> </h2>
+
+
+</article>
+
+
