@@ -18,6 +18,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -335,4 +336,13 @@ form {
   margin: 20px 20px auto auto;
   font-family: monospace;
   font-weight: 600;
+}
+
+.record {
+  display: flex;
+  flex-direction: row;
+}
+
+.record__time {
+  width: 80%;
 }
