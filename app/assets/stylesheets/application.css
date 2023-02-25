@@ -52,8 +52,6 @@ main {
   min-height: 95vh;
   margin: 1rem auto;
   position: relative;
-
-  /* border: 1px solid rgba(134, 134, 134, 0.507); */
 }
 
 button a {

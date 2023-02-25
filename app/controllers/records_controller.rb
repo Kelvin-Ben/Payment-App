@@ -8,8 +8,6 @@ class RecordsController < ApplicationController
   end
 
   def show
-    # @category = Category.find(params[:id])
-    # @records = @category.records.order(created_at: :desc)
     @category = Category.find(params[:category_id])
     @record = @category.records.find(params[:id])
   end
@@ -29,7 +27,6 @@ class RecordsController < ApplicationController
     @record.user_id = current_user.id
     @record.save!
     category_record = @category.category_records.new(record: @record)
-    # OR category_record = CategoryRecord.create!(category: @category, record: @record)
 
     respond_to do |format|
       if category_record.save
@@ -55,7 +52,6 @@ class RecordsController < ApplicationController
   # DELETE /records/1 or /records/1.json
   def destroy
     @record = set_record
-    # @record.delete
     @record.destroy
 
     respond_to do |format|

@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  # load_and_authorize_resource
 
   # GET /categories or /categories.json
   def index
@@ -10,7 +9,6 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
-    # @category = set_category
     @category = Category.find(params[:id])
     puts "\n\n\n\n #{@category.records.size} \n\n\n\n"
     @records = @category.records.order(created_at: :desc)
