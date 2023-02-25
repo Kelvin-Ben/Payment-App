@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       root 'categories#index', as: :authenticated_root
     end
     unauthenticated do
-      root 'splash#index', as: :unauthenticated_root
+      root 'splashes#index', as: :unauthenticated_root
     end
     get '/users/sign_out' => 'devise/sessions#destroy'
   resources :users, only: [:index]
