@@ -1,4 +1,7 @@
-<nav class="nav-splash">
+<nav class="nav-splash d-flex flex-center">
+  <%= link_to unauthenticated_root_path, class: "icon" do%>
+    <i class="fa-solid fa-arrow-left back"></i>
+  <% end %>
   <h1> LOG IN <h1>
 </nav>
 
@@ -22,6 +25,6 @@
     <%= f.submit "Log in", class: "login-button" %>
   </div>
   <div class="act d-flex flex-center">
-    <%= render "devise/shared/links" %>
+    <% render "devise/shared/links" %>
   </div>
 <% end %>

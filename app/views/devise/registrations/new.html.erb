@@ -1,12 +1,15 @@
-<nav class="nav-splash">
+<nav class="nav-splash d-flex flex-center">
+  <%= link_to unauthenticated_root_path, class: "icon" do%>
+    <i class="fa-solid fa-arrow-left back"></i>
+  <% end %>
   <h1> SING UP <h1>
 </nav>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }, html: { class: "login-form"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="input field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, class: "text-box" %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true, class: "text-box" %>
   </div>
 
   <div class="input field" >
@@ -34,7 +37,7 @@
   </div>
 
   <div class="act d-flex flex-center">
-    <%= render "devise/shared/links" %>
+    <% render "devise/shared/links" %>
   </div>
 <% end %>
 

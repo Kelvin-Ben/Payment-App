@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <% render @category %>
 
 <nav class="header-categories d-flex flex-center">
@@ -8,20 +6,29 @@
       <i class="fa-solid fa-right-to-bracket"></i>
     <% end %>
   </div>
-  <h1>CATEGORY RECORDS</h1>
+  <h1>CATEGORY DETAILS</h1>
 </nav>
 
+<p style="color: green"><%= notice %></p>
+
 <article class="category">
-  <div class="d-flex">
+  <div class="category-head d-flex">
     <div class="image">
       <%= image_tag(@category.image) %>
     </div>
     <div class="name-date d-flex">
       <h3 class="name"><%= @category.name %></h3>
     </div>
+    <p class="total-amount">$<%=@category.total_amount%></p>
+    <div class="btn-changes d-flex flex-center">
+      <div class="back-btn">
+        <%= link_to "Edit", edit_category_path(@category) %>
+      </div>
+      <div class="">
+        <%= button_to "Destroy", @category, class:"back-btn", method: :delete %>
+      </div>
+    </div>
   </div>
-  <br>
-  <p>Is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.<p/>
   <br>
   <hr>
   <br>
@@ -35,28 +42,22 @@
   <br>
   <hr>
   <br>
-  <div class="action-btn">
-    <%= link_to "Add new transaction", new_category_record_path(@category.id), class: ""%>
-  </div>
   <br>
-  <div class="d-flex flex-center">
-    <div class="back-btn">
-      <%= link_to "Edit category", edit_category_path(@category) %>
-    </div>
-    <div class="action-btn">
-      <%= button_to "Destroy category", @category, method: :delete %>
-    </div>
-  </div>
+  
 
   <div class="transactions d-flex"> 
     <h2>List of transaction </h2>
     <ul class="categoies-records">
-      <% @category.records.each do |record| %>
+      
+      <% @category.recent_transactions.each do |record| %>
         <li id="category-record">
           <%= render 'records/record',  record: record %>
         </li>
       <%end%>
     </ul>
+    <div class="action-btn">
+      <%= link_to "Add new transaction", new_category_record_path(@category.id), class: ""%>
+    </div>
   </div>
 
   <h2> <% @category.records.map{|record| record} %> </h2>

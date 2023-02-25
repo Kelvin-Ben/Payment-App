@@ -98,8 +98,27 @@ form {
 }
 
 /* LOG IN and SIGN UP */
-.nav-splash h1 {
+
+.nav-splash {
+  width: 100%;
   background-color: var(--shadow-color);
+  color: var(--main-color);
+  padding: 0.5rem;
+}
+
+.icon {
+  width: 10%;
+}
+
+.icon i {
+  margin-left: 50%;
+  padding: 0.3rem 0.5rem;
+  text-align: right;
+  font-size: 1.2rem;
+  color: var(--main-color);
+}
+
+.nav-splash h1 {
   color: var(--main-color);
 }
 
@@ -124,14 +143,14 @@ form {
 
 /* CATEGORIES PAGE */
 
-.home-header-categories h1 {
+/* .home-header-categories h1 {
   width: 100%;
   line-height: 70px;
   text-align: center;
   font-size: 24px;
   background-color: var(--main-color);
   color: var(--on-secondary);
-}
+} */
 
 .header-categories {
   height: 70px;
@@ -168,8 +187,13 @@ form {
   background-color: var(--bg-color);
 }
 
+.category-head {
+  position: relative;
+}
+
 .image {
   width: 70px;
+  min-width: 60px;
   height: 90%;
   background-color: var(--shadow-color);
 }
@@ -182,12 +206,12 @@ form {
   height: 100%;
   flex: 1;
   flex-direction: column;
-  margin: 0 2rem;
+  margin: 0 1rem 0 2rem;
   padding-top: 1rem;
 }
 
 .name-date h3.name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .name-date p.date {
@@ -197,9 +221,15 @@ form {
 }
 
 .total-amount {
-  margin: 1rem 3rem 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   font-weight: 600;
   font-size: 1.1rem;
+}
+
+.btn-changes {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
 }
 
 .new-cat-btn {
@@ -218,9 +248,9 @@ form {
 
 .transactions {
   flex-direction: column;
-  padding: 0 1rem;
+
+  /* padding: 0 1rem; */
   align-items: center;
-  background-color: #3778c205;
 }
 
 .transactions h2 {
@@ -229,7 +259,7 @@ form {
 
 .transactions ul {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
 }
 
 .transactions ul li {
@@ -237,7 +267,7 @@ form {
   margin-top: 1rem;
   padding: 1rem 3rem;
   border-radius: 4px;
-  background-color: var(--bacground-color);
+  background-color: #3778c205;
 }
 
 .transactions li p {
@@ -265,7 +295,7 @@ form {
 }
 
 .action-btn {
-  width: 600px;
+  width: 100%;
 }
 
 .submit input,

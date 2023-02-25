@@ -1,8 +1,12 @@
+<nav class="header-categories d-flex flex-center">
+  <%= link_to  destroy_user_session_path, class: "icons" do%>
+    <i class="fa-solid fa-toggle-on"></i>
+  <% end %>
+    <h1>CATEGORIES</h1>
+</nav>
+
 <p style="color: green"><%= notice %></p>
 
-<div class="home-header-categories">
-  <h1>CATEGORIES</h1>
-</div >
 <div class="categories">
   <% @categories.each do |category| %>
     <%= link_to category do %>
@@ -10,7 +14,6 @@
     <%end%>
   <% end %>
 </div>
-
 
 <div class="new-cat-btn">
   <button>
