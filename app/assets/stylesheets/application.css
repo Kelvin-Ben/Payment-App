@@ -1,15 +1,231 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+:root {
+    --size-border: 2px solid var(--text-color);
+    --box-border: 2px solid var(--shadow-color);
+    --prmary-color: #f4f4f4;
+    --bacground-color: #eee;
+    --main-color: #3778c2;
+    --secondary-color: #5fb523;
+    --text-color: #434b54;
+    --bg-color: #f5f6f8;
+    --on-main: #fff;
+    --on-secondary: #fff;
+    --shadow-color: #f1f1f2;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bacground-color);
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .flex-center {
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  main {
+    max-width: 480px;
+    margin: 0 auto;
+    border: var(--size-border);
+  
+    /* background-color: #5fb523; */
+  }
+  
+  /* CATEGORIES PAGE */
+  
+  .header-categories {
+    height: 70px;
+    width: 100%;
+    background-color: var(--main-color);
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    line-height: 70px;
+    text-align: center;
+    font-size: 24px;
+    color: var(--on-secondary);
+  }
+  
+  .categories {
+    padding: 0 1rem 1rem;
+  }
+  
+  .category {
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--bg-color);
+  }
+  
+  .image {
+    width: 70px;
+    height: 90%;
+    background-color: aquamarine;
+  }
+  
+  .image img {
+    width: 100%;
+  }
+  
+  .name-date {
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 2rem;
+    padding-top: 1rem;
+  }
+  
+  .name-date h3.name {
+    font-size: 1rem;
+  }
+  
+  .name-date p.date {
+    height: 67%;
+    align-items: flex-end;
+  }
+  
+  .total-amount {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .new-cat-btn {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #5fb523;
+  }
+  
+  .new-cat-btn button {
+    width: 100%;
+    padding: 1rem;
+    border: var(--box-border);
+    background-color: #5fb523;
+  }
+  
+  button a {
+    color: var(--on-secondary);
+    font-size: 1.3rem;
+  }
+  
+  /*
+  .word {
+  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  button,
+  .signupbtn {
+    font-weight: 700;
+    border: var(--size-border);
+    border-radius: 4px;
+    padding: 0.3rem 1rem;
+  }
+  
+  .notice,
+  .alert {
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+  }
+  
+  .notice {
+    border: 2px solid rgb(0 128 0 / 0%);
+    background: #d8ffe3;
+  }
+  
+  .alert {
+    border: 2px solid #f000;
+    background: #f2b5af;
+  }
+  
+  .food-title {
+    text-align: center;
+  }
+  
+  section.container {
+    max-width: 992px;
+    padding: 1rem;
+  }
+  
+  .signup,
+  .links {
+    text-align: center;
+  }
+  
+  .navbar {
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #98bdff;
+  }
+  
+  .recipe-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .add-recipe-btn button {
+    font-weight: 700;
+    border: var(--size-border);
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+  }
+   */
+  
+  form {
+    margin: 1.5rem auto;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border-radius: 4px;
+  }
+  
+  .input label {
+    font-weight: 700;
+  }
+  
+  .input input {
+    width: 100%;
+    height: 1.8rem;
+    margin: 0.5rem auto 1.5rem;
+  }
+  
+  .submit {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .submit input,
+  .action-btn a {
+    padding: 0.5rem 1rem;
+    border: var(--size-border);
+    border-radius: 8px;
+    color: var(--on-secondary);
+    background-color: #5fb523;
+  }
+  
+  .back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .back-btn a {
+    font-weight: 700;
+    border: var(--size-border);
+    border-radius: 4px;
+    padding: 0.2rem 1rem;
+  }

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Splashes</h1>
+
+<div id="splashes">
+  <% @splashes.each do |splash| %>
+    <%= render splash %>
+    <p>
+      <%= link_to "Show this splash", splash %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New splash", new_splash_path %>
