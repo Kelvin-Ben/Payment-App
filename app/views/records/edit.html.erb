@@ -1,10 +1,13 @@
-<h1>Editing record</h1>
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  category_record_path(@category, @record) do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1 class="transaction-header-nav">Editing Transaction</h1>
+  <div class="actions-save">
+    <input type="submit" name="commit" value="save" class="login-button new-edit-cat" form="new-tran-from" data-disable-with="Log in">
+  </div>
+</nav>
 
-<%= render "form", record: @record %>
-
-<br>
-
-<div>
-  <%= link_to "Show this record", @record %> |
-  <%= link_to "Back to records", records_path %>
-</div>
+<%= render "form", category: @category, record: @record %>

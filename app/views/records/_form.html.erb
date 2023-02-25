@@ -1,4 +1,4 @@
-<%= form_with(model: [category, record]) do |form| %>
+<%= form_with(model: [category, record], id: "new-tran-from")  do |form| %>
   <% if record.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
@@ -26,9 +26,5 @@
   <div>
     <% form.label :user_id, style: "display: block" %>
     <% form.text_field :user_id %>
-  </div>
-
-  <div class="submit">
-    <%= form.submit 'Save' %>
   </div>
 <% end %>
