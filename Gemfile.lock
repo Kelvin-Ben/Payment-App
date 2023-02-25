@@ -86,12 +86,6 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
-    database_cleaner (2.0.1)
-      database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.1)
-      activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.1)
     date (3.3.3)
     debug (1.7.1)
     devise (4.9.0)
@@ -274,7 +268,6 @@ DEPENDENCIES
   bootsnap
   cancancan
   capybara
-  database_cleaner
   debug
   devise
   image_processing (~> 1.2)
