@@ -26,6 +26,15 @@ body {
   background-color: var(--bacground-color);
 }
 
+.new-edit-cat {
+  cursor: pointer;
+  border: none;
+  background: inherit;
+  color: white;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
 .d-flex {
   display: flex;
 }
@@ -37,10 +46,13 @@ body {
 
 main {
   max-width: 540px;
-  width: 95%;
+  width: 98%;
   height: auto;
+  min-height: 95vh;
   margin: 1rem auto;
-  border: 1px solid rgba(134, 134, 134, 0.507);
+  position: relative;
+
+  /* border: 1px solid rgba(134, 134, 134, 0.507); */
 }
 
 button a {
@@ -143,23 +155,19 @@ form {
 
 /* CATEGORIES PAGE */
 
-/* .home-header-categories h1 {
-  width: 100%;
-  line-height: 70px;
-  text-align: center;
-  font-size: 24px;
-  background-color: var(--main-color);
-  color: var(--on-secondary);
-} */
-
 .header-categories {
   height: 70px;
   width: 100%;
   background-color: var(--main-color);
 }
 
-.header-categories h1 {
+.header-categories h1:not(.transaction-header-nav) {
   width: 70%;
+  font-size: 24px;
+  color: var(--on-secondary);
+}
+
+.transaction-header-nav {
   font-size: 24px;
   color: var(--on-secondary);
 }
@@ -224,6 +232,7 @@ form {
   margin: 1rem 0 0.5rem 0;
   font-weight: 600;
   font-size: 1.1rem;
+  z-index: 1;
 }
 
 .btn-changes {
@@ -233,6 +242,8 @@ form {
 }
 
 .new-cat-btn {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   margin-top: 2rem;
   padding: 1rem;
@@ -317,4 +328,10 @@ form {
   border: var(--size-border);
   border-radius: 4px;
   padding: 0.2rem 1rem;
+}
+.footer {
+  width: 100%;
+  margin: 20px 20px auto auto;
+  font-family: monospace;
+  font-weight: 600;
 }
