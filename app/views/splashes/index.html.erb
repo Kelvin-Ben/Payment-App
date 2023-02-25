@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Splashes</h1>
-
-<div id="splashes">
-  <% @splashes.each do |splash| %>
-    <%= render splash %>
-    <p>
-      <%= link_to "Show this splash", splash %>
-    </p>
-  <% end %>
+<div class="splash-page d-flex">
+  <div class="header">
+    <h1>Payment Budget App</h1>
+  </div>
+  <div class="buttons">
+    <%= button_to "Login", new_user_session_path, :method => :get, class:"splash-btns" %>
+    <%= button_to "Sign up", new_user_registration_path, :method => :get, class:"splash-btns splash-signup" %>
+  </div>
 </div>
-
-<%= link_to "New splash", new_splash_path %>

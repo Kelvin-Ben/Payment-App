@@ -15,8 +15,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_235804) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "splashes", force: :cascade do |t|
@@ -25,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_235804) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -40,4 +44,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_235804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "categories", "users"
 end
