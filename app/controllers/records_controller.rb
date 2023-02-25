@@ -5,11 +5,14 @@ class RecordsController < ApplicationController
 
   def index
     @records = Record.all
-    # @category = Category.find(params[:category_id])
-    # @records = @category.records
   end
 
-  def show; end
+  def show
+    # @category = Category.find(params[:id])
+    # @records = @category.records.order(created_at: :desc)
+    @category = Category.find(params[:category_id])
+    @record = @category.records.find(params[:id])
+  end
 
   # GET /records/new
   def new
@@ -30,8 +33,6 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if category_record.save
-        # format.html { redirect_to record_url(@record), notice: "Record was successfully created." }
-        # format.html { redirect_to new_category_record_path(@category), notice: 'Record was successfully created.' }
         format.html { redirect_to category_url(@category), notice: 'Transaction was successfully created.' }
 
       else
@@ -44,7 +45,7 @@ class RecordsController < ApplicationController
   def update
     respond_to do |format|
       if @record.update(record_params)
-        format.html { redirect_to record_url(@record), notice: 'Record was successfully updated.' }
+        format.html { redirect_to category_record_url(@category, @record), notice: 'Record was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -53,10 +54,12 @@ class RecordsController < ApplicationController
 
   # DELETE /records/1 or /records/1.json
   def destroy
+    @record = set_record
+    # @record.delete
     @record.destroy
 
     respond_to do |format|
-      format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to category_url(@category), notice: 'Record was successfully destroyed.' }
     end
   end
 
@@ -64,12 +67,11 @@ class RecordsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_record
-    # @record = Record.find(params[:id])
+    @record = Record.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def record_params
-    # params.require(:record).permit(:name, :amount, :user_id)
     params.require(:record).permit(:name, :amount)
   end
 end

@@ -1,5 +1,5 @@
 class SplashesController < ApplicationController
-  before_action :set_splash, only: %i[ show edit update destroy ]
+  before_action :set_splash, only: %i[show edit update destroy]
 
   # GET /splashes or /splashes.json
   def index
@@ -7,8 +7,7 @@ class SplashesController < ApplicationController
   end
 
   # GET /splashes/1 or /splashes/1.json
-  def show
-  end
+  def show; end
 
   # GET /splashes/new
   def new
@@ -16,8 +15,7 @@ class SplashesController < ApplicationController
   end
 
   # GET /splashes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /splashes or /splashes.json
   def create
@@ -25,7 +23,7 @@ class SplashesController < ApplicationController
 
     respond_to do |format|
       if @splash.save
-        format.html { redirect_to splash_url(@splash), notice: "Splash was successfully created." }
+        format.html { redirect_to splash_url(@splash), notice: 'Splash was successfully created.' }
         format.json { render :show, status: :created, location: @splash }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class SplashesController < ApplicationController
   def update
     respond_to do |format|
       if @splash.update(splash_params)
-        format.html { redirect_to splash_url(@splash), notice: "Splash was successfully updated." }
+        format.html { redirect_to splash_url(@splash), notice: 'Splash was successfully updated.' }
         format.json { render :show, status: :ok, location: @splash }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class SplashesController < ApplicationController
     @splash.destroy
 
     respond_to do |format|
-      format.html { redirect_to splashes_url, notice: "Splash was successfully destroyed." }
+      format.html { redirect_to splashes_url, notice: 'Splash was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_splash
-      @splash = Splash.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def splash_params
-      params.fetch(:splash, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_splash
+    @splash = Splash.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def splash_params
+    params.fetch(:splash, {})
+  end
 end
