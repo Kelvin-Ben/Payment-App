@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  # resources :category_records
-  # resources :records
-  # resources :categories
-
   devise_for :users
   devise_scope :user do
     authenticated :user do
@@ -12,10 +8,9 @@ Rails.application.routes.draw do
       root 'splashes#index', as: :unauthenticated_root
     end
     get '/users/sign_out' => 'devise/sessions#destroy'
-  resources :users, only: [:index]
+  resources :users
   end
-  resources :categories do 
-    # resources :records, except: [:index]
-    resources :records
+  resources :categories, only: %i[index show edit new create update destroy ] do
+    resources :records, only: %i[index show new create update destroy]
   end
 end
