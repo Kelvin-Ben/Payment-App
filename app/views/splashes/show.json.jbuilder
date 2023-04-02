@@ -1,1 +1,1 @@
-json.partial! "splashes/splash", splash: @splash
+json.partial! 'splashes/splash', splash: @splash

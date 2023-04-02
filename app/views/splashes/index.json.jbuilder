@@ -1,1 +1,1 @@
-json.array! @splashes, partial: "splashes/splash", as: :splash
+json.array! @splashes, partial: 'splashes/splash', as: :splash

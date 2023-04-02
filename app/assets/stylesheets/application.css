@@ -334,8 +334,10 @@ form {
   margin: 20px 20px auto auto;
   font-family: monospace;
   font-weight: 600;
+
   /* padding: 10px; */
 }
+
 #footer {
   display: flex;
   flex-direction: row;
@@ -343,6 +345,7 @@ form {
   justify-content: center;
   margin: 0 auto;
 }
+
 .record {
   display: flex;
   flex-direction: row;
