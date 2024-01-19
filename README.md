@@ -24,7 +24,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Budget App] <a name="about-project"></a>
+# 📖 Payment App <a name="about-project"></a>
 
 
 **Payment App** is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you have spent and on what
@@ -182,11 +182,11 @@ Anyone who finds this project interesting is welcome to give it a star.
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
 
-- **[How do i run the project in my local machine?]**
+- **How do i run the project in my local machine?**
 
-  - [You need to clone the project in your local environment through the terminal]
+  - You need to clone the project in your local environment through the terminal
 
-- **[What database are you using for this project?]**
+- **What database are you using for this project?**
 
   - [POSTGRESQL]
 
