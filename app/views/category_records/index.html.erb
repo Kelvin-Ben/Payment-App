@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Category records</h1>
+
+<div id="category_records">
+  <% @category_records.each do |category_record| %>
+    <%= render category_record %>
+    <p>
+      <%= link_to "Show this category record", category_record %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New category record", new_category_record_path %>

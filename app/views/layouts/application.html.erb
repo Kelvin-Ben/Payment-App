@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PaymentApp</title>
+    <title>Budget App</title> 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/29d7bf5b00.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9ef5f4f831.js" crossorigin="anonymous"></script>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <main>
+      <%= yield %>
+      </main>
+      <div>
+        <%= render "/layouts/footer" %>
+      </div>
   </body>
 </html>

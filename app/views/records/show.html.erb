@@ -1,0 +1,49 @@
+<p style="color: green"><%= notice %></p>
+
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  category_path(@category) do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1>Transaction details</h1>
+</nav>
+
+<div class="transactions show d-flex"> 
+  <h2></h2>
+  <ul class="categoies-records">
+    <li id="category-record" class="show">
+      <%= render @record %>
+
+      <ul>
+        <li class='record d-flex flex-center'>
+          <p> <strong>Create Date: </strong> <p>
+          <span class="date d-flex"> <%= @record.created_at.strftime('%Y') %>
+            <span>_<%= @record.created_at.to_formatted_s(:short) %></span>
+          </span>
+        </li>
+
+        <li class='record d-flex flex-center'>
+          <% if @record.created_at == @record.updated_at %>
+            <p><strong>No Update yet !!!</strong></p>
+          <% else %>
+            <p> <strong>Update Date: </strong> <p>
+            <span class="date d-flex"> <%= @record.updated_at.strftime('%Y') %>
+              <span>_<%= @record.updated_at.to_formatted_s(:short) %></span>
+            </span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="btns-record d-flex flex-center">
+      <div class="actions-btn">
+        <%= link_to "Update", edit_category_record_path(@category, @record) %>
+      </div>
+      <div class="delete-btn">
+        <%=button_to 'Delete', {:controller => :records, :action => 'destroy', :id => @record.id}, :method => :delete%>
+      </div>
+  </div>
+
+</div>

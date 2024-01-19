@@ -1,0 +1,2 @@
+class Splash < ApplicationRecord
+end

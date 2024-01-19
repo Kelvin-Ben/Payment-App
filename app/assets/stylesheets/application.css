@@ -1,15 +1,356 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+:root {
+  --size-border: 2px solid var(--text-color);
+  --box-border: 2px solid var(--shadow-color);
+  --prmary-color: #f4f4f4;
+  --bacground-color: #eee;
+  --main-color: #3778c2;
+  --secondary-color: #5fb523;
+  --text-color: #434b54;
+  --bg-color: #f5f6f8;
+  --on-main: #fff;
+  --on-secondary: #fff;
+  --shadow-color: #f1f1f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bacground-color);
+}
+
+.new-edit-cat {
+  cursor: pointer;
+  border: none;
+  background: inherit;
+  color: white;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  max-width: 540px;
+  width: 98%;
+  height: auto;
+  min-height: 95vh;
+  margin: 1rem auto;
+  position: relative;
+}
+
+button a {
+  color: var(--on-secondary);
+  font-size: 1.3rem;
+}
+
+form {
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--bg-color);
+  border-radius: 4px;
+}
+
+/* SPLASH PAGE */
+
+.splash-page {
+  width: 100%;
+  height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--main-color);
+}
+
+.splash-page h1 {
+  font-size: 2rem;
+  padding: 0.3rem 1rem;
+  color: var(--secondary-color);
+  border: var(--box-border);
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+.buttons {
+  width: 90%;
+}
+
+.buttons form {
+  width: 100%;
+  background-color: var(--main-color);
+  margin: 0 auto;
+}
+
+.buttons button {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #5fb523;
+  padding: 0.5rem;
+  border: var(--bg-color);
+  color: var(--on-secondary);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* LOG IN and SIGN UP */
+
+.nav-splash {
+  width: 100%;
+  background-color: var(--shadow-color);
+  color: var(--main-color);
+  padding: 0.5rem;
+}
+
+.icon {
+  width: 10%;
+}
+
+.icon i {
+  margin-left: 50%;
+  padding: 0.3rem 0.5rem;
+  text-align: right;
+  font-size: 1.2rem;
+  color: var(--main-color);
+}
+
+.nav-splash h1 {
+  color: var(--main-color);
+}
+
+.actions {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.actions input {
+  font-weight: 700;
+  border: var(--size-border);
+  border-radius: 4px;
+  padding: 0.2rem 1rem;
+}
+
+.act a {
+  font-weight: 700;
+  border: var(--size-border);
+  border-radius: 4px;
+  padding: 0.2rem 1rem;
+}
+
+/* CATEGORIES PAGE */
+
+.header-categories {
+  height: 70px;
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+.header-categories h1:not(.transaction-header-nav) {
+  width: 70%;
+  font-size: 24px;
+  color: var(--on-secondary);
+}
+
+.transaction-header-nav {
+  font-size: 24px;
+  color: var(--on-secondary);
+}
+
+.icons {
+  width: 10%;
+}
+
+.icons i {
+  margin-left: 50%;
+  padding: 0.3rem 0.5rem;
+  text-align: right;
+  color: var(--on-secondary);
+  font-size: 1.2rem;
+}
+
+.categories {
+  padding: 1rem 1rem 0;
+}
+
+.category {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-color);
+}
+
+.category-head {
+  position: relative;
+}
+
+.image {
+  width: 70px;
+  min-width: 60px;
+  height: 90%;
+  background-color: var(--shadow-color);
+}
+
+.image img {
+  width: 100%;
+}
+
+.name-date {
+  height: 100%;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 1rem 0 2rem;
+  padding-top: 1rem;
+}
+
+.name-date h3.name {
+  font-size: 1.4rem;
+}
+
+.name-date p.date {
+  height: 67%;
+  align-items: flex-end;
+  margin-top: 1rem;
+}
+
+.total-amount {
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.btn-changes {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+}
+
+.new-cat-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #5fb523;
+}
+
+.new-cat-btn button {
+  width: 100%;
+  padding: 1rem;
+  border: var(--box-border);
+  background-color: #5fb523;
+}
+
+.transactions {
+  flex-direction: column;
+
+  /* padding: 0 1rem; */
+  align-items: center;
+}
+
+.transactions h2 {
+  text-align: center;
+}
+
+.transactions ul {
+  width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.transactions ul li {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 4px;
+  background-color: #3778c205;
+}
+
+.transactions li p {
+  margin: 3px 0;
+  font-size: 1.1rem;
+}
+
+.transactions p span {
+  color: var(--main-color);
+}
+
+.input label {
+  font-weight: 700;
+}
+
+.input input {
+  width: 100%;
+  height: 1.8rem;
+  margin: 0.5rem auto 1.5rem;
+}
+
+.submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 100%;
+}
+
+.submit input,
+.action-btn a {
+  padding: 0.5rem 1rem;
+  border: var(--size-border);
+  border-radius: 8px;
+  color: var(--on-secondary);
+  background-color: #5fb523;
+}
+
+.back-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.back-btn a {
+  font-weight: 700;
+  border: var(--size-border);
+  border-radius: 4px;
+  padding: 0.2rem 1rem;
+}
+
+.footer {
+  width: 100%;
+  margin: 20px 20px auto auto;
+  font-family: monospace;
+  font-weight: 600;
+
+  /* padding: 10px; */
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.record {
+  display: flex;
+  flex-direction: row;
+}
+
+.record__time {
+  width: 80%;
+}

@@ -1,0 +1,30 @@
+<%= form_with(model: [category, record], id: "new-tran-from")  do |form| %>
+  <% if record.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+        <% record.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, required: true, placeholder: "Name"  %>
+  </div>
+
+  <div  class="input">
+    <%= form.label :amount, style: "display: block" %>
+    <% form.text_field :amount %>
+    <%= form.number_field :amount, placeholder: "Amount", required: true  %>
+
+  </div>
+
+  <div>
+    <% form.label :user_id, style: "display: block" %>
+    <% form.text_field :user_id %>
+  </div>
+<% end %>

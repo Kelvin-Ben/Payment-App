@@ -1,0 +1,22 @@
+<nav class="header-categories d-flex flex-center">
+  <%= link_to  destroy_user_session_path, class: "icons" do%>
+    <i class="fa-solid fa-right-from-bracket"></i>
+  <% end %>
+    <h1>CATEGORIES</h1>
+</nav>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="categories">
+  <% @categories.each do |category| %>
+    <%= link_to category do %>
+    <%= render category %>
+    <%end%>
+  <% end %>
+</div>
+
+<div class="new-cat-btn">
+  <button>
+    <%= link_to "New category", new_category_path %>
+  </button> 
+</div>
